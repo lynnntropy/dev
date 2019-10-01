@@ -37,6 +37,10 @@ Vagrant.configure("2") do |config|
     config.vm.network :forwarded_port, guest: i, host: i
   end
 
+  config.vagrant.plugins = ["vagrant-disksize"]
+
+  config.disksize.size = "100GB"
+
   # Provider-specific configuration.
   config.vm.provider :virtualbox do |vm|
 
